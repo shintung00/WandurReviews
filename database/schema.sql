@@ -12,3 +12,5 @@ CREATE TABLE reviews (
     user_photo VARCHAR(250) NOT NULL,
     PRIMARY KEY(id)
 );
+
+/* run mysql -u root -p < dabase/schema.sql to create database and table */ 
