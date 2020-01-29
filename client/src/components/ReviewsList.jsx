@@ -1,13 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+// eslint-disable-next-line import/extensions
 import ReviewsListItem from './ReviewsListItem.jsx';
 
-function ReviewsList(props) {
-    return (
-        <div>
-            {props.reviews.map((review, i) => 
-            <ReviewsListItem key={i} review={review} />)}
-        </div>
-    )
-}
+const ReviewsList = ({ reviews }) => (
+  <div>
+    {reviews.map((review) => <ReviewsListItem key={review.id} review={review} />)}
+  </div>
+);
 
 export default ReviewsList;
