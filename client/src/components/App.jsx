@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // eslint-disable-next-line import/extensions
 import ReviewsList from './ReviewsList.jsx';
+import { Body } from '../styles/App.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,8 +33,10 @@ class App extends React.Component {
     const { reviews } = this.state;
     return (
       <div>
-        <h1>Reviews</h1>
-        <ReviewsList reviews={reviews} />
+        <Body>
+          <h1>Reviews</h1>
+          <ReviewsList reviews={reviews} />
+        </Body>
       </div>
     );
   }

@@ -7,7 +7,7 @@
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "seed-database": "node database/insertData.js",
-    "test": "jest --env=jsdom --transformIgnorePatterns 'node_modules/(?!(<package-need-to-transform>|<other-package-need-to-transform>)/)'"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
