@@ -22,3 +22,5 @@ for (let i = 0; i < data.length; i++) {
   // eslint-disable-next-line max-len
   connection.query(query, [currentProperty.property_id, currentProperty.date, currentProperty.name, currentProperty.comments, currentProperty.user_photo]);
 }
+
+connection.end();

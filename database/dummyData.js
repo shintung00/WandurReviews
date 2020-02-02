@@ -10,13 +10,12 @@ for (let i = 0; i < 100; i++) {
 // create 5000 dummy data
 const data = [];
 for (let i = 0; i < 100; i++) {
-  for (let j = 1; j < 51; j++) {
+  for (let j = 0; j < 100; j++) {
     // make random index for user photo url
     const randomIndex = Math.floor(Math.random() * 100);
     // eslint-disable-next-line object-curly-newline
     data.push({ property_id: i, date: `${faker.date.month()} 2019`, name: faker.name.findName(), comments: faker.lorem.sentences(), user_photo: url[randomIndex] });
   }
 }
-console.log(data);
 
 module.exports = data;

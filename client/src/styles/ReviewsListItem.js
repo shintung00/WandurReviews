@@ -1,25 +1,6 @@
 import styled from 'styled-components';
 
-const UserInfo1 = styled.div`
-  -webkit-box-pack: justify !important;
-  display: flex !important;
-  justify-content: space-between !important;
-`;
-
-const UserInfo2 = styled.div`
-  display: flex !important;
-`;
-
-const UserInfo3 = styled.div`
-  height: 48px;
-  width: 48px;
-  display: block;
-  position: relative !important;
-`;
-
 const UserPhoto = styled.img`
-  height: 48px;
-  width: 48px;
   vertical-align: middle !important;
   display: block !important;
   border-radius: 50% !important;
@@ -28,10 +9,6 @@ const UserPhoto = styled.img`
   border-color: rgb(255, 255, 255) !important;
   overflow: hidden !important;
   background-color: #D8D8D8 !important;
-`;
-
-const Margin1 = styled.div`
-  margin-left: 16px;
 `;
 
 const Name = styled.div`
@@ -54,10 +31,6 @@ const Date = styled.div`
   margin: 0px !important;
 `;
 
-const Margin2 = styled.div`
-  margin-top: 16px;
-`;
-
 const Comment = styled.div`
   overflow-wrap: break-word !important;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
@@ -68,11 +41,6 @@ const Comment = styled.div`
   margin: 0px !important;
 `;
 
-const Margin3 = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
-`;
-
 const Breakline = styled.div`
   border-bottom-width: var(--border-rule-border-width, 1px) !important;
   border-bottom-color: var(--color-divider, #EBEBEB) !important; 
@@ -80,6 +48,5 @@ const Breakline = styled.div`
 `;
 
 export {
-  UserInfo1, UserInfo2, UserInfo3, UserPhoto, Margin1,
-  Name, Date, Margin2, Comment, Margin3, Breakline 
+  UserPhoto, Name, Date, Comment, Breakline 
 };

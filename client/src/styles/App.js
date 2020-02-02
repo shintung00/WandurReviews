@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Body = styled.div`
+  max-width: 696px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   width: auto !important;
