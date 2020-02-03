@@ -1,0 +1,23 @@
+body {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+._zjunba {
+  -webkit-box-pack: justify !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+._jro6t0 {
+  display: flex !important;
+}
+
+._zjunbb {
+  margin-left: 16px;
+}
