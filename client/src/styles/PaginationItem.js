@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
@@ -19,7 +20,9 @@ const Button = styled.button`
   border-style: none !important;
   border-color: initial !important;
   border-image: initial !important;
-  font: inherit inherit inherit inherit inherit inherit inherit inherit inherit !important;
+  outline: none !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 14px;
   text-decoration: none !important;
   cursor: pointer;
   text-rendering: auto;
@@ -42,6 +45,7 @@ const List = styled.li`
   ${(props) => (props.margin_left ? `margin-left: ${props.margin_left}px;` : null)};
 `;
 
+// page style for previous and next button
 const Page2 = styled.div`
   align-items: center !important;
   background-color: transparent !important;
@@ -61,11 +65,13 @@ const Svg = styled.svg`
   fill: currentcolor;
 `;
 
+// Previous path image
 const Path1 = styled.path`
   d: path("m 13.7 16.29 a 1 1 0 1 1 -1.42 1.41 l -8 -8 a 1 1 0 0 1 0 -1.41 l 8 -8 a 1 1 0 1 1 1.42 1.41 l -7.29 7.29 Z");
   fill-rule: evenodd;
 `;
 
+// Next path image
 const Path2 = styled.path`
   d: path("m 4.29 1.71 a 1 1 0 1 1 1.42 -1.41 l 8 8 a 1 1 0 0 1 0 1.41 l -8 8 a 1 1 0 1 1 -1.42 -1.41 l 7.29 -7.29 Z");
   fill-rule: evenodd;

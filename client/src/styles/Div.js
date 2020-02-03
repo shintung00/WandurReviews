@@ -15,6 +15,8 @@ const Div = styled.div`
   ${(props) => (props.position ? `position: ${props.position};` : null)};
   ${(props) => (props.align_items ? `align-items: ${props.align_items};` : null)};
   ${(props) => (props.justify_content ? `justify-content: ${props.justify_content};` : null)};
+  ${(props) => (props.user_select ? `user-select: ${props.user_select};` : null)};
+  ${(props) => (props.transform ? `transform: ${props.transform};` : null)};
 `;
 
 export default Div;

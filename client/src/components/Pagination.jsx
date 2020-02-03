@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-constructor */
+/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
@@ -9,34 +11,22 @@ import Div from '../styles/Div.js';
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
-    this.reviewsArray = this.reviewsArray.bind(this);
-  }
-
-  // assign 7 comments to each button
-  reviewsArray() {
-    const { reviews } = this.props;
-    const result = [];
-    for (let i = 0; i < reviews.length; i += 7) {
-      result.push(reviews.slice(i, i + 7));
-    }
-    return result;
   }
 
   render() {
-    const { getPageReviews } = this.props;
+    const { changePage, pages, currentPage } = this.props;
     return (
       <div>
         <Div display="inline-block !important">
           <Div margin_bottom={32}>
             <Div display="flex !important" align_itmes="center !important" justify_content="flex-start !important">
               <Ulist>
-                
-                {this.reviewsArray().map((review, index) => (
+                {pages.map((page, index) => (
                   <PaginationItem
                     key={index}
-                    page={index + 1}
-                    review={review}
-                    getPageReviews={getPageReviews}
+                    page={page}
+                    currentPage={currentPage}
+                    changePage={changePage}
                   />
                 ))}
               </Ulist>

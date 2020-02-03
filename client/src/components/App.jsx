@@ -1,8 +1,10 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable import/extensions */
 import React from 'react';
 import axios from 'axios';
 import ReviewsList from './ReviewsList.jsx';
 import Pagination from './Pagination.jsx';
+import getPageArray from './getPageArray.js';
 import { Body } from '../styles/App.js';
 
 class App extends React.Component {
@@ -12,8 +14,10 @@ class App extends React.Component {
       // eslint-disable-next-line comma-dangle
       reviewsByPage: [],
       totalReviews: [],
+      currentPage: 0,
+      pageArray: [],
     };
-    this.getPageReviews = this.getPageReviews.bind(this);
+    this.changePage = this.changePage.bind(this);
   }
 
   componentDidMount() {
@@ -24,10 +28,11 @@ class App extends React.Component {
     axios.get('/api/0')
       .then((response) => {
         // shows first 7 comments by default
-        console.log(response.data);
         this.setState({
           reviewsByPage: response.data.slice(0, 7),
           totalReviews: response.data,
+          currentPage: 1,
+          pageArray: getPageArray(response.data, 1),
         });
       })
       .catch((error) => {
@@ -35,18 +40,23 @@ class App extends React.Component {
       });
   }
 
-  getPageReviews(reviews) {
-    this.setState({ reviewsByPage: reviews });
+  changePage(currentPage) {
+    const { totalReviews } = this.state;
+    this.setState({
+      reviewsByPage: totalReviews.slice((currentPage - 1) * 7, currentPage * 7),
+      pageArray: getPageArray(totalReviews, currentPage),
+      currentPage: currentPage,
+    });
   }
 
   render() {
-    const { reviewsByPage, totalReviews } = this.state;
+    const { reviewsByPage, pageArray, currentPage } = this.state;
     return (
       <div>
         <Body>
           <h1>Reviews</h1>
           <ReviewsList reviews={reviewsByPage} />
-          <Pagination reviews={totalReviews} getPageReviews={this.getPageReviews} />
+          <Pagination pages={pageArray} changePage={this.changePage} currentPage={currentPage} />
         </Body>
       </div>
     );
