@@ -4,8 +4,10 @@ import React from 'react';
 import axios from 'axios';
 import ReviewsList from './ReviewsList.jsx';
 import Pagination from './Pagination.jsx';
+import Search from './Search.jsx';
 import getPageArray from './getPageArray.js';
 import { Body } from '../styles/App.js';
+import Div from '../styles/Div.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,8 +57,11 @@ class App extends React.Component {
       <div>
         <Body>
           <h1>Reviews</h1>
-          <ReviewsList reviews={reviewsByPage} />
-          <Pagination pages={pageArray} changePage={this.changePage} currentPage={currentPage} />
+          {/* <Search /> */}
+          <Div margin_top={16}>
+            <ReviewsList reviews={reviewsByPage} />
+            <Pagination pages={pageArray} changePage={this.changePage} currentPage={currentPage} />
+          </Div>
         </Body>
       </div>
     );

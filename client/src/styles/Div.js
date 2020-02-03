@@ -7,8 +7,8 @@ const Div = styled.div`
   ${(props) => (props.margin_bottom ? `margin-bottom: ${props.margin_bottom}px;` : null)};
 
   /* height & weith */
-  ${(props) => (props.height ? `height: ${props.height}px;` : null)};
-  ${(props) => (props.width ? `width: ${props.width}px;` : null)};
+  ${(props) => (props.height ? `height: ${props.height};` : null)};
+  ${(props) => (props.width ? `width: ${props.width};` : null)};
 
   /* other */
   ${(props) => (props.display ? `display: ${props.display};` : null)};
@@ -17,6 +17,9 @@ const Div = styled.div`
   ${(props) => (props.justify_content ? `justify-content: ${props.justify_content};` : null)};
   ${(props) => (props.user_select ? `user-select: ${props.user_select};` : null)};
   ${(props) => (props.transform ? `transform: ${props.transform};` : null)};
+  ${(props) => (props.overflow ? `overflow: ${props.overflow};` : null)};
+  ${(props) => (props.vertical_align ? `vertical-align: ${props.vertical_align};` : null)};
+  ${(props) => (props.float ? `float: ${props.float};` : null)};
 `;
 
 export default Div;

@@ -5,7 +5,7 @@ import React from 'react';
 import ReviewsListItem from './ReviewsListItem.jsx';
 
 const ReviewsList = ({ reviews }) => (
-  <div>
+  <div tabIndex="-1">
     {reviews.map((review, index) => <ReviewsListItem key={index} review={review} />)}
   </div>
 );

@@ -23,7 +23,7 @@ const Button = styled.button`
   outline: none !important;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   font-size: 14px;
-  text-decoration: none !important;
+  :hover { text-decoration: underline !important; }
   cursor: pointer;
   text-rendering: auto;
   letter-spacing: normal;
