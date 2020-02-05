@@ -14,7 +14,7 @@ CREATE TABLE reviews (
     PRIMARY KEY(id)
 );
 
-/* run mysql -u root -p < dabase/schema.sql to 
+/* run mysql -u root -p < database/schema.sql to 
 create database and table 
 
 *** Need to change date type when use true data

@@ -26,5 +26,10 @@ app.get('/api/0', (req, res) => {
   });
 });
 
+// send bundle.js file for get request
+app.get('/bundle.js', (req, res) => {
+  res.send('../client/dist/bundle.js');
+})
+
 // start server on port 3003
 app.listen(port, () => console.log(`app listening on port ${port}!`));

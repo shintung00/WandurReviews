@@ -29,6 +29,7 @@ class App extends React.Component {
   getReviews() {
     axios.get('/api/0')
       .then((response) => {
+        console.log(response)
         // shows first 7 comments by default
         this.setState({
           reviewsByPage: response.data.slice(0, 7),
