@@ -1,7 +1,7 @@
 const mysqlConfig = {
   host: 'localhost',
   user: 'root',
-  passowrd: '',
+  password: '1234',
   // eslint-disable-next-line comma-dangle
   database: 'reviews'
 };
