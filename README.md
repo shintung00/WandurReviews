@@ -26,17 +26,29 @@ API Routes  Reviews
 
 
 * **Method:**: PUT
-  *  **URL**: /properties/:${property}/reviews?review=${number};
-  *  **Route Parameters:**: propertyId=[integer];
+  *  **URL**: /properties/:${property}/reviews?review=${number}/user/:${userId};
+  *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
-  *  **Description:**: Route to edit a posted review for a given property;
-  *  **Body:**: userId=[integer], ratingOverall=[integer], ratingCommunication=[integer], ratingCheckIn=[integer], ratingCleanliness=[integer], ratingAccuracy=[integer], ratingLocation=[integer], comment=[varchar], hostReplied=[bool], hostComment=[varchar]
+  *  **Description:**: Route for users to edit a posted review for a given property;
+  *  **Body:**: ratingOverall=[integer], ratingCommunication=[integer], ratingCheckIn=[integer], ratingCleanliness=[integer], ratingAccuracy=[integer], ratingLocation=[integer], comment=[varchar];
 
+* **Method:**: PUT
+  *  **URL**: /properties/:${property}/reviews?review=${number}/host/:${hostId};
+  *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
+  *  **Query Parameters:** Required: reviewNumber=[integer];
+  *  **Description:**: Route for hosts to reply to a review;
+  *  **Body:**: hostReplied=[bool], hostComment=[varchar], hostTime=[time];
 
 * **Method:**: DELETE
-  *  **URL**: /properties/:${property}/reviews?review=${number};
-  *  **Route Parameters:**: propertyId=[integer];
+  *  **URL**: /properties/:${property}/reviews?review=${number}/user/:${userId};
+  *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
-  *  **Description:**: Route to delete a posted review for a given property;
+  *  **Description:**: Route to delete a posted review by a user;
   *  **Body:**: false
  
+ * **Method:**: DELETE
+  *  **URL**: /properties/:${property}/reviews?review=${number}/host/:${hostId};
+  *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], hostId=[integer];
+  *  **Query Parameters:** Required: reviewNumber=[integer];
+  *  **Description:**: Route to delete a posted review by a user;
+  *  **Body:**: false
