@@ -1,7 +1,7 @@
 var fs = require('fs');
 var faker = require('faker');
 
-let usersEntries = fs.createWriteStream('database/data/userEntries.csv');
+let usersEntries = fs.createWriteStream('database/data/userTestEntries.csv');
 
 var createUsers = function(num) {
   var index = 0;
@@ -24,5 +24,5 @@ var createUsers = function(num) {
 };
 
 console.time('seed time');
-createUsers(20000000);
+createUsers(100000);
 console.timeEnd('seed time');

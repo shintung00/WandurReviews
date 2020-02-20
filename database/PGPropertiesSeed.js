@@ -1,5 +1,6 @@
 var fs = require('fs');
 var faker = require('faker');
+var uuidv4 = require('uuid/v4');
 
 let propertiesEntries = fs.createWriteStream('database/data/propertiesEntries.csv');
 
@@ -8,7 +9,7 @@ var createProperties = function(num) {
   for (var i = 0; i < num/10000; i++) {
     var load = '';
     for (var j = 0; j < 10000; j++) {
-      // var property = index;
+      var property = uuidv4();
       var propertyName = faker.commerce.productName();
       var host= Math.round(Math.random() * 3000000);
       var ratingCommunication = Math.round(((Math.random() * 1.3 + 3.7) * 10))/10;
