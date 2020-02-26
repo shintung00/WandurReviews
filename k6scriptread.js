@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 // import faker from 'faker';
 
 export const options = {
-  vus: 250,
+  vus: 100,
   duration: '60s',
 };
 
