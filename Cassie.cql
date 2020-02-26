@@ -5,8 +5,6 @@ DESCRIBE TABLE ____
 
 CREATE KEYSPACE sdc WITH REPLICATION = { 'class' :  'SimpleStrategy', 'replication_factor' : 1};
 
-
-
 CREATE TABLE reviews (
   property_id int, 
   review_id int, 
@@ -30,7 +28,7 @@ CREATE TABLE reviews (
 );
 
 
-COPY reviews (  
+COPY sampleReviews (  
   property_id, 
   review_id, 
   user_id, 
@@ -49,7 +47,7 @@ COPY reviews (
   rating_accuracy, 
   rating_location, 
   rating_value
-) FROM '/home/ubuntu/csv/cassieEntries.csv' WITH header = false AND DELIMITER = ','; 
+) FROM '/Users/hsintung/Desktop/reviews/database/data/xaa' WITH header = false AND DELIMITER = ','; 
 
 
 COPY reviews (  
@@ -71,7 +69,28 @@ COPY reviews (
   rating_accuracy, 
   rating_location, 
   rating_value
-) FROM '/home/ubuntu/csv/cassieEntries.csv' WITH header = false AND DELIMITER = ',' AND MAXBATCHSIZE = 3000; CHUNKSIZE
+) FROM '/home/ubuntu/csv/xaa' WITH header = false AND DELIMITER = ','
+
+COPY reviews (  
+  property_id, 
+  review_id, 
+  user_id, 
+  user_name, 
+  user_pic, 
+  review_comment, 
+  review_time, 
+  host_id, 
+  host_name, 
+  host_pic, 
+  host_comment, 
+  host_time, 
+  rating_communication, 
+  rating_check, 
+  rating_clean, 
+  rating_accuracy, 
+  rating_location, 
+  rating_value
+) FROM '/home/ubuntu/csv/xab' WITH header = false AND DELIMITER = ','
 
 
 -- CREATE A NEW REVIEW

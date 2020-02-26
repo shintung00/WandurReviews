@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 // import faker from 'faker';
 
 export const options = {
-  vus: 1000,
+  vus: 250,
   duration: '60s',
 };
 
@@ -14,7 +14,7 @@ export default function () {
     'status was 200': (r) => r.status === 200,
     'transaction time OK': (r) => r.timings.duration < 200,
   });
-  sleep(1);
+  sleep(0.05);
 }
 
 // const formData = {
@@ -34,5 +34,5 @@ export default function () {
 //     'status was 200': (r) => r.status === 200,
 //     'transaction time OK': (r) => r.timings.duration < 200,
 //   });
-//   sleep(0.01);
+//   sleep(0.05);
 // }
