@@ -2,7 +2,8 @@ const cassandra = require('cassandra-driver');
 const faker = require('faker');
 
 const client = new cassandra.Client({
-  contactPoints: ['127.0.0.1'],
+  // contactPoints: ['127.0.0.1'],
+  contactPoints: ['54.153.92.236'],
   localDataCenter: 'datacenter1',
   keyspace: 'sdc',
 });
@@ -14,7 +15,7 @@ const getReviews = (req, res) => {
       res.json(result.rows);
     })
     .catch((error) => {
-      console.log(error);
+      res.send(error);
     });
 };
 
@@ -42,13 +43,12 @@ const postReview = (req, res) => {
   const query = 'INSERT INTO reviews (property_id, review_id, user_id, user_name, user_pic, review_comment, review_time, rating_communication, rating_check, rating_clean, rating_accuracy, rating_location, rating_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
   const params = [propertyID, reviewID, userID, userName, userPic, reviewComment, reviewTime, communication, check, clean, accuracy, location, value];
   client.execute(query, params, { prepare: true })
-    .then((result) => {
-      // console.log(`successfully posted review #${reviewID}`);
+    .then(() => {
       res.send(`successfully posted review #${reviewID}`);
       res.status(200);
     })
     .catch((error) => {
-      // console.error(error);
+      console.error(error);
       res.status(400);
       res.end('error in posting review');
     });
