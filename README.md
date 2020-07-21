@@ -1,4 +1,4 @@
-# reviews
+# Wandur - Reviews
 How to start this component?
 
 1. npm install
@@ -9,7 +9,7 @@ How to start this component?
 
 API Routes  Reviews
 
-* **Method:**: GET
+* **Method**: GET
   *  **URL**: /properties/:${propertyId}/reviews;
   *  **Route Parameters:**: propertyId=[integer];
   *  **Query Parameters:**: Optional;
@@ -17,7 +17,7 @@ API Routes  Reviews
   *  **Body:**: false
 
 
-* **Method:**: POST
+* **Method** POST
   *  **URL**: /properties/:${propertyId}/reviews;
   *  **Route Parameters:**: propertyId=[integer];
   *  **Query Parameters:**: N/A;
@@ -25,28 +25,28 @@ API Routes  Reviews
   *  **Body:**: userId=[integer], reviewerName=[varchar], ratingOverall=[integer], ratingCommunication=[integer], ratingCheckIn=[integer], ratingCleanliness=[integer], ratingAccuracy=[integer], ratingLocation=[integer], comment=[varchar]
 
 
-* **Method:**: PUT
+* **Method**: PUT
   *  **URL**: /properties/:${propertyId}/reviews?review=${reviewId}/user/:${userId};
   *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
   *  **Description:**: Route for users to edit a posted review for a given property;
   *  **Body:**: ratingOverall=[integer], ratingCommunication=[integer], ratingCheckIn=[integer], ratingCleanliness=[integer], ratingAccuracy=[integer], ratingLocation=[integer], comment=[varchar];
 
-* **Method:**: PUT
+* **Method**: PUT
   *  **URL**: /properties/:${propertyId}/reviews?review=${reviewId}/host/:${hostId};
   *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
   *  **Description:**: Route for hosts to reply to a review;
   *  **Body:**: hostReplied=[bool], hostComment=[varchar], hostTime=[time];
 
-* **Method:**: DELETE
+* **Method**: DELETE
   *  **URL**: /properties/:${propertyId}/reviews?review=${reviewId}/user/:${userId};
   *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], userId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
   *  **Description:**: Route to delete a posted review by a user;
   *  **Body:**: false
  
- * **Method:**: DELETE
+ * **Method**: DELETE
   *  **URL**: /properties/:${propertyId}/reviews?review=${reviewId}/host/:${hostId};
   *  **Route Parameters:**: propertyId=[integer], reviewId=[integer], hostId=[integer];
   *  **Query Parameters:** Required: reviewNumber=[integer];
