@@ -1,4 +1,8 @@
 # Wandur - Reviews
+![](wandur-demo.gif)
+
+You can find the [full video demo here](https://www.youtube.com/watch?v=qrVjz0TRAr8&t).
+
 How to start this component?
 
 1. npm install
@@ -52,3 +56,5 @@ API Routes  Reviews
   *  **Query Parameters** Required: reviewNumber=[integer];
   *  **Description**: Route to delete a posted review by a user;
   *  **Body**: false
+
+
